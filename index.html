@@ -8,6 +8,7 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>我如恒星一般静候你</title>
+    <script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
     <style>
         body {
             -webkit-font-smoothing: antialiased;
@@ -21,7 +22,7 @@
         }
         
         h2 {
-            font-size: 220%;
+            /* font-size: 220%; */
             font-weight: 400;
             color: whitesmoke;
         }
@@ -32,10 +33,12 @@
             top: 20%;
             transform: translate(0, -50%);
             text-align: center;
+            font-size: 180%;
+            color: aliceblue;
         }
         
         .timer {
-            font-size: 180%;
+            /* font-size: 180%; */
             line-height: 1.5;
             margin: 1em 0;
             color: aliceblue;
@@ -48,14 +51,27 @@
 </head>
 
 <body>
-    <div class="content">
+    <div id="time1" class="content">
         <h2>邂逅ppk已经</h2>
         <div class="timer">
             <b id="d"></b>个白天与黑夜  <b id="h"></b>小时  <b id="m"></b>分钟  <b id="s"></b>秒  
         </div>
     </div>
+    <div id="text1" class="content" style="display:none;">
+
+    </div>
 
     <script>
+        var str = "%u6211%u597D%u50BB%uFF0C%u4E3A%u4EC0%u4E48%u8981%u8FD9%u4E48%u6467%u6B8B%u522B%u4EBA%uFF0C%u660E%u660E%u81EA%u5DF1%u4E5F%u88AB%u4F60%u6240%u5728%u4E4E%uFF0C%u6211%u597D%u81EA%u79C1%u554A%uFF0C%u6211%u518D%u4E5F%u4E0D%u8981%u628A%u4F60%u5F04%u4E22%u4E86";
+        $(document).ready(function(){
+            $("#text1").text(unescape(str));
+
+            $("body").click(function(){
+                $("#time1").fadeToggle("slow");
+                $("#text1").fadeToggle("slow");
+            });
+        });
+
         function timer() {
             var start = new Date("February 20, 2022 15:18:18");
             var t = new Date() - start;

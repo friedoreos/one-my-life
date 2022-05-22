@@ -3,5 +3,3 @@
 https://friedoreos.github.io/one-my-life
 
 2022.02.20
-
-I hope so.
